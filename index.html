@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>باريس للنظارات | متجر فاخر</title>
+    <meta name="description" content="اكتشف أحدث تشكيلات النظارات الشمسية والطبية الفاخرة من باريس. أناقة، حماية، وجاذبية لا تضاهى.">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo"><span>باريس</span> للنظارات</a>
+            <ul class="nav-links">
+                <li><a href="#hero">الرئيسية</a></li>
+                <li><a href="#products">المنتجات</a></li>
+                <li><a href="#about">من نحن</a></li>
+                <li><a href="#contact">تواصل معنا</a></li>
+            </ul>
+            <div class="nav-icons">
+                <div class="search-icon"><i class="fas fa-search"></i></div>
+                <div class="cart-icon" id="cart-btn">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count">0</span>
+                </div>
+                <div class="menu-toggle" id="mobile-menu"><i class="fas fa-bars"></i></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Cart Overlay & Sidebar -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>سلة المشتريات</h3>
+            <i class="fas fa-times" id="close-cart"></i>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <!-- Items will be injected here via JS -->
+            <div class="empty-cart">السلة فارغة حالياً</div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>الإجمالي:</span>
+                <span id="total-price">0$</span>
+            </div>
+            <button class="checkout-btn">إتمام الطلب</button>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <header id="hero" class="hero">
+        <div class="hero-bg">
+            <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=1600&q=80" alt="نظارات فاخرة خلفية">
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <div class="hero-text-box">
+                <h1 class="hero-title">رؤية جديدة للأناقة</h1>
+                <p class="hero-subtitle">اكتشف التشكيلة الحصرية من النظارات الشمسية والطبية الفاخرة التي تعكس شخصيتك المميزة.</p>
+                <a href="#products" class="btn btn-primary">تسوق المجموعة <i class="fas fa-arrow-left"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Products Section -->
+    <section id="products" class="products-section section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>أحدث الإصدارات</h2>
+                <div class="line"></div>
+                <p>مجموعة مختارة بعناية من أفضل الماركات العالمية</p>
+            </div>
+
+            <!-- Categories Filter -->
+            <div class="filter-btns">
+                <button class="filter-btn active" data-filter="all">الكل</button>
+                <button class="filter-btn" data-filter="sunglasses">نظارات شمسية</button>
+                <button class="filter-btn" data-filter="medical">نظارات طبية</button>
+                <button class="filter-btn" data-filter="sports">رياضية</button>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="products-grid" id="products-container">
+                <!-- Product 1 -->
+                <div class="product-card" data-category="sunglasses">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1572635196237-14b3f281501f?auto=format&fit=crop&w=800&q=80" alt="نظارة كلاسيك">
+                        <div class="product-actions">
+                            <button class="action-btn add-to-cart" data-id="1" data-name="نظارة شمسية كلاسيكية" data-price="120" data-img="https://images.unsplash.com/photo-1572635196237-14b3f281501f?auto=format&fit=crop&w=800&q=80">
+                                <i class="fas fa-cart-plus"></i>
+                            </button>
+                            <button class="action-btn"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">شمسية</div>
+                        <h3 class="product-name">نظارة شمسية كلاسيكية</h3>
+                        <div class="product-price">120$</div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card" data-category="medical">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1591076482161-42ce6da69f67?auto=format&fit=crop&w=800&q=80" alt="نظارة طبية">
+                        <div class="product-actions">
+                            <button class="action-btn add-to-cart" data-id="2" data-name="نظارة طبية أنيقة" data-price="95" data-img="https://images.unsplash.com/photo-1591076482161-42ce6da69f67?auto=format&fit=crop&w=800&q=80">
+                                <i class="fas fa-cart-plus"></i>
+                            </button>
+                            <button class="action-btn"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">طبية</div>
+                        <h3 class="product-name">نظارة طبية أنيقة</h3>
+                        <div class="product-price">95$</div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card" data-category="sports">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1589831377283-33cb1cc6ba5d?auto=format&fit=crop&w=800&q=80" alt="نظارة رياضية">
+                        <div class="product-actions">
+                            <button class="action-btn add-to-cart" data-id="3" data-name="نظارة رياضية بولارايزد" data-price="150" data-img="https://images.unsplash.com/photo-1589831377283-33cb1cc6ba5d?auto=format&fit=crop&w=800&q=80">
+                                <i class="fas fa-cart-plus"></i>
+                            </button>
+                            <button class="action-btn"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">رياضية</div>
+                        <h3 class="product-name">نظارة رياضية بولارايزد</h3>
+                        <div class="product-price">150$</div>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card" data-category="sunglasses">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1625591342273-53531b782b5f?auto=format&fit=crop&w=800&q=80" alt="نظارة عصرية">
+                        <div class="product-actions">
+                            <button class="action-btn add-to-cart" data-id="4" data-name="نظارة شمسية عصرية" data-price="110" data-img="https://images.unsplash.com/photo-1625591342273-53531b782b5f?auto=format&fit=crop&w=800&q=80">
+                                <i class="fas fa-cart-plus"></i>
+                            </button>
+                            <button class="action-btn"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">شمسية</div>
+                        <h3 class="product-name">نظارة شمسية عصرية</h3>
+                        <div class="product-price">110$</div>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="product-card" data-category="sunglasses">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1556306535-0f09a536f0bff?auto=format&fit=crop&w=800&q=80" alt="نظارة فاخرة">
+                        <div class="product-actions">
+                            <button class="action-btn add-to-cart" data-id="5" data-name="نظارة فاخرة ذهبية" data-price="250" data-img="https://images.unsplash.com/photo-1556306535-0f09a536f0bff?auto=format&fit=crop&w=800&q=80">
+                                <i class="fas fa-cart-plus"></i>
+                            </button>
+                            <button class="action-btn"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">شمسية فاخرة</div>
+                        <h3 class="product-name">نظارة فاخرة ذهبية</h3>
+                        <div class="product-price">250$</div>
+                    </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="product-card" data-category="medical">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1509695507497-903c140c43b0?auto=format&fit=crop&w=800&q=80" alt="نظارة ريترو">
+                        <div class="product-actions">
+                            <button class="action-btn add-to-cart" data-id="6" data-name="نظارة طبية ريترو دائرية" data-price="85" data-img="https://images.unsplash.com/photo-1509695507497-903c140c43b0?auto=format&fit=crop&w=800&q=80">
+                                <i class="fas fa-cart-plus"></i>
+                            </button>
+                            <button class="action-btn"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">طبية</div>
+                        <h3 class="product-name">نظارة طبية ريترو دائرية</h3>
+                        <div class="product-price">85$</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section section-padding">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-box">
+                    <div class="feature-icon"><i class="fas fa-shipping-fast"></i></div>
+                    <h3>توصيل سريع</h3>
+                    <p>توصيل مجاني وسريع لجميع مدن المملكة لطلباتك فوق 200$.</p>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>ضمان الجودة</h3>
+                    <p>ضمان شامل لمدة عامين على جميع إطارات النظارات والعدسات.</p>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon"><i class="fas fa-undo"></i></div>
+                    <h3>استرجاع سهل</h3>
+                    <p>سياسة إرجاع مرنة خلال 14 يوماً من تاريخ استلام الطلب.</p>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon"><i class="fas fa-headset"></i></div>
+                    <h3>دعم 24/7</h3>
+                    <p>فريق خدمة العملاء متوفر على مدار الساعة للرد على استفساراتكم.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section section-padding" style="background-color: #f4f4f4;">
+        <div class="container">
+            <div class="section-title">
+                <h2>من نحن</h2>
+                <div class="line"></div>
+                <p>تعرف على قصة باريس للنظارات الشغف بالجودة والتصميم.</p>
+            </div>
+            <div style="text-align: center; max-width: 800px; margin: 0 auto; line-height: 1.8; font-size: 1.1rem; color: #555;">
+                <p>تأسست باريس للنظارات لتقديم أفضل وأحدث تشكيلات النظارات التي تناسب مختلف الأذواق والاحتياجات. نحرص دائماً على اختيار الماركات العالمية الرائدة لضمان أعلى مستويات الجودة والحماية لأعينكم. رؤيتنا هي دمج الأناقة العصرية مع الراحة القصوى في كل قطعة نقدمها.</p>
+                <div style="margin-top: 30px;">
+                    <a href="#contact" class="btn btn-primary" style="background-color: var(--dark-bg);">تواصل معنا الآن</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="container footer-container">
+            <div class="footer-col">
+                <a href="#" class="logo footer-logo"><span>باريس</span> للنظارات</a>
+                <p>الوجهة الأولى لأرقى العلامات التجارية العالمية في عالم النظارات الشمسية والطبية. نقدم لكم أحدث التصاميم التي تواكب خطوط الموضة العالمية.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>روابط سريعة</h3>
+                <ul>
+                    <li><a href="#hero">الرئيسية</a></li>
+                    <li><a href="#products">المنتجات</a></li>
+                    <li><a href="#about">من نحن</a></li>
+                    <li><a href="#">سياسة الخصوصية</a></li>
+                    <li><a href="#">الشروط والأحكام</a></li>
+                </ul>
+            </div>
+            <div class="footer-col" style="direction:ltr; text-align:right;">
+                <h3>تواصل معنا</h3>
+                <ul class="contact-info" style="direction:rtl;">
+                    <li><i class="fas fa-map-marker-alt"></i> صنعاء، شارع الزبيري</li>
+                    <li style="direction: ltr; justify-content: flex-end;"><span style="margin-right:15px;color:#bbb;">967+ 772062777</span> <i class="fas fa-phone"></i></li>
+                    <li style="direction: ltr; justify-content: flex-end;"><span style="margin-right:15px;color:#bbb;">967+ 782807337</span> <i class="fas fa-phone"></i></li>
+                    <li><i class="fas fa-envelope"></i> mohammedmojepp4063155@gmail.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>جميع الحقوق محفوظة &copy; 2026 باريس للنظارات.</p>
+                <p>برمجة وتصميم: <strong style="color:var(--primary-color);">محمد مجيب بشر</strong></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
